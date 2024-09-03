@@ -1,37 +1,28 @@
 package simple;
-
 import java.util.Scanner;
-
 public class sswitchst {
-
-	public static void main(String[] args) {
-		try (Scanner sc = new Scanner(System.in)) {
-		//Scanner sc = new Scanner(System.in);
-
+public static void main(String[] args) {
+try (Scanner sc = new Scanner(System.in)) {
+//Scanner sc = new Scanner(System.in);
 System.out.println("enter the op");
 String op = sc.next();	
-
 System.out.println("enter a values = ");
 int a = sc.nextInt();
-
 System.out.println("enter b values = ");
 int b = sc.nextInt();
-
 switch(op) {
 case ("add"):
-	System.out.println(a + b);
-	break;
+System.out.println(a + b);
+break;
 case ("sub"):
-	System.out.println(a - b);
-	break;
+System.out.println(a - b);
+break;
 case ("mul"):
-	System.out.println(a * b);
-	break;
+System.out.println(a * b);
+break;
 default:
-	System.out.println("invalid operations");
-
+System.out.println("invalid operations");
 }
-	}
-
+}
 }
 }
