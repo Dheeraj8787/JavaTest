@@ -1,0 +1,43 @@
+package actionClass;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class mouseclick {
+		public static void main(String[] args) throws InterruptedException {
+			String month = "October 2024";
+			String Exp_date = "25";
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+
+			driver.manage().window().maximize();
+			driver.get("https://www.expedia.ca/");
+			driver.findElement(By.xpath("//button[normalize-space()='Aug 3 - Aug 5']")).click();
+			Thread.sleep(3000);
+			while (true) {
+			String text = driver.findElement(By.cssSelector("div[class='uitk-month uitk-month-double uitk-month-double-left'] span[class='uitk-align-center uitk-month-label']"))
+			.getText();
+			if (text.equals(month)) {
+			break;
+			}
+			else {
+			driver.findElement(By.xpath("//button[@data-stid='uitk-calendar-navigation-controls-next-button']")).click();
+				}
+			}
+			List<WebElement> alldates = driver.findElements(By.xpath("//tbody/tr/td/div"));
+			for (WebElement ele : alldates) {
+			String date_text = ele.getText();
+			String date[] = date_text.split("\n");
+			if (date[0].equals(Exp_date)) {
+			ele.click();
+			break;
+			}
+			}
+			driver.findElement(By.xpath("//button[@class='uitk-button uitk-button-medium uitk-button-has-text uitk-button-primary uitk-layout-flex-item']")).click();
+			driver.close();
+		}
+	}
+
