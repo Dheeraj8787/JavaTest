@@ -1,0 +1,29 @@
+package Seleinums;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Exceldata {
+
+public static void main(String[] args) throws Throwable {
+ FileInputStream file = new FileInputStream("C:\\Users\\lenovo\\Downloads\\Testing\\Test Sele.xlsx");
+ XSSFWorkbook prog = new XSSFWorkbook(file);
+ XSSFSheet sheet = prog.getSheet("Clariont");
+ int rowcount = sheet.getLastRowNum();
+ int colcount = sheet.getRow(0).getLastCellNum();
+ for (int i =0;i<=rowcount;i++) {
+ XSSFRow currentrow = sheet.getRow(i);
+ 
+ for (int j =0;j<=colcount;j++) {
+ String str = currentrow.getCell(j).toString();
+ System.out.println(" "+currentrow.getCell(0)+" "+currentrow.getCell(1)+" "+currentrow.getCell(2)+" "+currentrow.getCell(3)+" "+currentrow.getCell(4));
+ break;
+ }
+	 }
+ System.out.println();
+
+	}
+}
