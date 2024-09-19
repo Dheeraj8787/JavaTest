@@ -3,7 +3,7 @@ public class Dtint
 {
 public static void main(String[] args) 
 {
-    byte num = 100;
+    byte num = 10;
     short amt = 2500;
     int pin = 504215;
     long ph = 123456783243243290l;
