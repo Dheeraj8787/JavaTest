@@ -12,7 +12,6 @@ public class mouseclick {
 			String Exp_date = "25";
 			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
-
 			driver.manage().window().maximize();
 			driver.get("https://www.expedia.ca/");
 			driver.findElement(By.xpath("//button[normalize-space()='Aug 3 - Aug 5']")).click();
