@@ -11,7 +11,7 @@ public class DatePickerExample
 {
    public static void main(String[] args) 
 {
-        // Set up ChromeDriver using WebDriverManager
+        // Set up ChromeDriver using WebDriverManager //
         WebDriverManager.chromedriver().setup();
         // Initialize ChromeDriver instance
         WebDriver driver = new ChromeDriver();
